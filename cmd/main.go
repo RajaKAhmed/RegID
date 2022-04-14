@@ -13,8 +13,8 @@ import (
 func main() {
 	router := mux.NewRouter()
 
-	router.HandleFunc("/Registration", handlers.GetRegistration).Methods(http.MethodGet)
-
+	router.HandleFunc("/Registration", handlers.GetAllRegistrations).Methods(http.MethodGet)
+	router.HandleFunc("/Registration{AppID}", handlers.GetRegistration).Methods(http.MethodGet)
 	log.Println("API is running!")
 	http.ListenAndServe(":4000", router)
 }
