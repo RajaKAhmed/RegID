@@ -15,6 +15,7 @@ func main() {
 
 	router.HandleFunc("/Registration", handlers.GetAllRegistrations).Methods(http.MethodGet)
 	router.HandleFunc("/Registration/{AppID}", handlers.GetRegistration).Methods(http.MethodGet)
+	router.HandleFunc("/Registration", handlers.AddRegistration).Methods(http.MethodPost)
 	log.Println("API is running!")
 	http.ListenAndServe(":4000", router)
 }
