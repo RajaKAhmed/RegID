@@ -1,10 +1,12 @@
+/*https://dev.to/karanpratapsingh/build-a-rest-api-with-go-for-beginners-3gp*/
+
 package main
 
 import (
 	"log"
 	"net/http"
 
-	"github.com/RajaKAhmed/RegID/handlers"
+	"github.com/RajaKAhmed/RegID/pkg/handlers"
 	"github.com/gorilla/mux"
 )
 
