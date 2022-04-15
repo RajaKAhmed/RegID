@@ -6,9 +6,9 @@ import (
 	"log"
 	"math/rand"
 	"net/http"
-
 	"github.com/RajaKAhmed/RegID/pkg/mocks"
 	"github.com/RajaKAhmed/RegID/pkg/models"
+	"github.com/RajaKAhmed/RegID/pkg/handlers/Randomizer"
 )
 
 func AddRegistration(w http.ResponseWriter, r *http.Request) {
@@ -24,7 +24,7 @@ func AddRegistration(w http.ResponseWriter, r *http.Request) {
 	json.Unmarshal(body, &registration)
 
 	// Append to the Book mocks
-	registration.AppID = rand.Intn(100)
+	registration.AppID = func Randomizer()
 	mocks.Registration = append(mocks.Registration, registration)
 
 	// Send a 201 created response
